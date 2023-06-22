@@ -12,13 +12,6 @@ from images_creation import generate_images
 from clean_data import remove_files_and_folders
 import json
 
-PEXELS_API_KEY = "JjFJ2eQuHVX6KZypkccCzuPPZCiBHGQoinIUZFcRFosBU3GSm9Stl6IS"
-
-from pexelsapi.pexels import Pexels
-
-openai.organization = "org-7iXwOHzScsZkPTRhBL4Prh4N"
-openai.api_key = "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"
-
 
 async def send_reply(ctx, data):
     reply = await ctx.send(data)

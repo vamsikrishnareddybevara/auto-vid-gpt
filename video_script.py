@@ -2,8 +2,14 @@ import openai
 import asyncio
 import json
 
-openai.organization = "org-7iXwOHzScsZkPTRhBL4Prh4N"
-openai.api_key = "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"
+
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+openai.organization = os.getenv("OPEN_AI_KEY")
+openai.api_key = os.getenv("OPEN_AI_ORGANIZATION")
 
 
 durations_vs_words = {1: "200", 3: "400", 5: "600"}

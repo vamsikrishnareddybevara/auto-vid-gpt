@@ -1,8 +1,15 @@
-PEXELS_API_KEY = "JjFJ2eQuHVX6KZypkccCzuPPZCiBHGQoinIUZFcRFosBU3GSm9Stl6IS"
-
 from pexelsapi.pexels import Pexels
 import requests
 import re
+
+
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+PEXELS_API_KEY = os.getenv("PEXELS_API_KEY")
+
 
 pexel = Pexels(PEXELS_API_KEY)
 
