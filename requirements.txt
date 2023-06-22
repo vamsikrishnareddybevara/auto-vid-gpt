@@ -1,0 +1,7 @@
+discord.py==2.2.3
+moviepy==1.0.3
+openai==0.27.7
+openai_whisper==20230314
+pexels_api_py==0.0.5
+Requests==2.31.0
+TTS==0.14.3
