@@ -6,7 +6,6 @@ from moviepy.editor import (
     ColorClip,
 )
 
-from proglog import ProgressBarLogger
 import asyncio
 from PIL import Image
 from moviepy.video.fx.resize import resize

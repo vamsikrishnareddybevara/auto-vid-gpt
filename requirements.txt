@@ -1,9 +1,10 @@
-discord.py
+discord.py==2.3.0
 icrawler==0.6.6
 moviepy==1.0.3
 numpy==1.23.5
 openai==0.27.7
 openai_whisper==20230314
 pexels_api_py==0.0.5
+python-dotenv==1.0.0
 Requests==2.31.0
 TTS==0.14.3

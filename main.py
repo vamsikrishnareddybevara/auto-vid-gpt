@@ -9,7 +9,6 @@ from moviepy.editor import (
 )
 from discord import File
 import asyncio
-from proglog import ProgressBarLogger
 from text_animation import get_text_clips
 import re
 import os
@@ -18,39 +17,6 @@ import os
 async def send_reply(ctx, data):
     reply = await ctx.send(data)
     return reply
-
-
-class MyBarLogger(ProgressBarLogger):
-    def __init__(self, message):
-        super().__init__()
-        self.last_message = ""
-        self.previous_percentage = 0
-        self.message = message
-
-    def callback(self, **changes):
-        # Every time the logger message is updated, this function is called with
-        # the `changes` dictionary of the form `parameter: new value`.
-        for parameter, value in changes.items():
-            # print ('Parameter %s is now %s' % (parameter, value))
-            self.last_message = value
-
-    def bars_callback(self, bar, attr, value, old_value=None):
-        # Every time the logger progress is updated, this function is called
-        print("self.message", self.message)
-        if "Writing video" in self.last_message:
-            percentage = (value / self.bars[bar]["total"]) * 100
-            if percentage > 0 and percentage < 100:
-                if int(percentage) != self.previous_percentage:
-                    self.previous_percentage = int(percentage)
-
-                    async def run():
-                        await self.message.edit(
-                            content="Rendering video - "
-                            + str(self.previous_percentage)
-                            + "%"
-                        )
-
-                    asyncio.run(run())
 
 
 async def send_video(ctx, video):
@@ -160,7 +126,6 @@ async def generate_video(
     )
 
     final_video
-    logger = MyBarLogger(message=render_video_message)
 
     print("Rendering video...")
     asyncio.sleep(0)
