@@ -1,5 +1,7 @@
 discord.py==2.2.3
+icrawler==0.6.6
 moviepy==1.0.3
+numpy==1.23.5
 openai==0.27.7
 openai_whisper==20230314
 pexels_api_py==0.0.5
